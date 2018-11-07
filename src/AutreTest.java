@@ -5,6 +5,7 @@ public class AutreTest {
 		
 		System.out.println("Jesus Christ est mon sauveur ! ");
 		System.out.println("Je suis sure et certains que mes efforts finiront par payer");
+		System.out.println("Je finirai par entrer dans la grace au nom de Jesus");
 	}
 
 }
