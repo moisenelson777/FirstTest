@@ -36,12 +36,34 @@ public class Order {
      * Run asking process for a new menu
      * */
     public void runMenu() {
-    	 this.displayAvailableMenu();
-         Scanner sc = new Scanner(System.in);
-         int nb = sc.nextInt();
-         this.displaySelectedMenu(nb);
-         
-         sc.close();
+    	this.displayAvailableMenu();
+        Scanner sc = new Scanner(System.in);
+        int nbMenu = sc.nextInt();
+        this.displaySelectedMenu(nbMenu);
+        switch (nbMenu) {
+            case 1:
+                displayAvailableSide(true);
+                int nbSide = sc.nextInt();
+                displaySelectedSide(nbSide, true);
+                displayAvailableDrink();
+                int nbDrink = sc.nextInt();
+                displaySelectedDrink(nbDrink);
+                break;
+            case 2:
+                displayAvailableSide(true);
+                nbSide = sc.nextInt();
+                displaySelectedSide(nbSide, true);
+                break;
+            case 3:
+                displayAvailableSide(false);
+                nbSide = sc.nextInt();
+                displaySelectedSide(nbSide, false);
+                displayAvailableDrink();
+                nbDrink = sc.nextInt();
+                displaySelectedDrink(nbDrink);
+                break;
+        }
+        sc.close();
     }
     /**
      * Display a selected side depending on all sides enable or not.
@@ -99,8 +121,37 @@ public class Order {
 			default : 
 				System.out.println("Vous n'avez pas choisi de boisson parmi les choix proposés");
 				break;
-		}
-		
+		}	
 	}
+	
+	/**
+	 * Display all available sides depending on all sides enable or not.
+	 * All sides = vegetables, fries and rice
+	 * No all sides = rice or not
+	 * @param allSideEnable enable display for all side or not
+	 */
+	 public void displayAvailableSide(boolean allSideEnable) {
+		 System.out.println("Choix d'accompagnement");
+		 if(allSideEnable) {
+		  System.out.println("1 - légumes frais \n"
+		  		           + "2 - Frites \n"
+		  		           + "3 - riz");
+		 }else {
+			 System.out.println("1 - riz");
+			 System.out.println("2 - pas de riz");
+		 }
+		 	 System.out.println("Que souhaitez-vous comme accompagnement ?");
+	 }
+	 
+	 /**
+	  * Display all available drinks in the restaurant
+	  */   
+	 public void displayAvailableDrink() {
+	     System.out.println("Choix boisson");
+	     System.out.println("1 - eau plate");
+	     System.out.println("2 - eau gazeuse");
+	     System.out.println("3 - soda");
+	     System.out.println("Que souhaitez-vous comme boisson ?");
+	 }
     
 }
