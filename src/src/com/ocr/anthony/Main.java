@@ -10,5 +10,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int nb = sc.nextInt();
         order.displaySelectedMenu(nb);
+        
+        sc.close();
     }
 }
