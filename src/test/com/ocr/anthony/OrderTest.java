@@ -281,7 +281,7 @@ public class OrderTest {
         System.setIn(new ByteArrayInputStream(String.format("2%n1%n1%n1%n2%n2%n").getBytes()));
         order = new Order();
         order.runMenus();
-        assertEquals("RÃ©sumÃ© de votre commande :%n" +
+        assertEquals("Résumé de votre commande :%n" +
                 "Menu 1:%n" +
                 "Vous avez choisi comme menu : poulet%n" +
                 "Vous avez choisi comme accompagnement : légumes frais%n" +
